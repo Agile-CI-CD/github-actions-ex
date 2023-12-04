@@ -28,6 +28,8 @@ jobs:
   goodbye:
     runs-on: ubuntu-latest
     steps:
+      - name: dump github context
+        run: echo '${{ toJson(github.event)}}' | jq
       - name: goodbye world
         run: echo "Goodbye world"
         shell: bash
